@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Registrants</h1>
+
+    <table>
+        <style>
+            table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+
+            td {
+                border: 1px solid black;
+                padding: 2px;
+            }
+
+            th {
+                border: 1px solid black;
+                padding: 2px;
+            }
+        </style>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in registrants.keys() %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ registrants[name] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/">Register for more courses!</a>
+
+{% endblock %}
